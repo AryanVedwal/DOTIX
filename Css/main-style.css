@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playball&display=swap");
+
+:root {
+  --main: #ce3b4f;
+  --light: #c7818b;
+  --second: #e0dcdc;
+  --white: #fbfbfb;
+  --black: #151117;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+
+  color: var(--white);
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+}
+
+.logo-text {
+  font-family: "Playball", cursive;
+}
+
+.red-text{
+  color: var(--main);
+}
+
+/*-- Navbar --*/
+.navbar {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 5vw;
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  transition: all 0.5s ease;
+}
+
+.navbar.scrolled {
+  background-color: var(--black);
+  z-index: 5;
+}
+
+.nav-logo {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 1vw;
+}
+
+.nav-logo :where(.logo-text, .logo-image > .material-symbols-outlined) {
+  font-size: clamp(1.1rem, 0.8211rem + 1.3945vw, 3rem);
+}
+
+.nav-links {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3vw;
+  gap: 4px;
+}
+
+.nav-links p {
+  padding: 4px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  transition: all 0.25s ease;
+  position: relative;
+  min-width: 15%;
+}
+
+.nav-links p:hover {
+  background-color: #8f8f8f5b;
+}
+
+.nav-links p a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: clamp(0.7rem, 0.6193rem + 0.4037vw, 1.25rem);
+  gap: 6px;
+}
+
+.nav-links p .hover-menu {
+  position: absolute;
+  top: 150%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 12px;
+  border-top: 4px solid var(--main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--black);
+  visibility: hidden;
+}
+
+.nav-links p:hover .hover-menu {
+  visibility: visible;
+}
+
+.hover-menu span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  transition: all 0.25s ease;
+  padding: 6px;
+  border-radius: 5px;
+  font-size: clamp(0.7rem, 0.656rem + 0.2202vw, 1rem);
+}
+
+.hover-menu span:hover {
+  background-color: #8f8f8f3a;
+}
+
+/*-- Nav-menu --*/
+.nav-menu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.nav-menu .material-symbols-outlined {
+  font-size: clamp(2rem, 1.7064rem + 1.4679vw, 4rem);
+  cursor: pointer;
+}
+/*-- Nav-menu --*/
+/*-- sidemenu --*/
+.side-menu {
+  position: fixed;
+  top: -110vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--second) 10%, var(--main) 90%);
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 10vh 5vw;
+  transition: all 0.7s ease;
+}
+
+.side-menu.open {
+  top: 0;
+}
+
+.side-menu .material-symbols-outlined {
+  position: absolute;
+  top: 2.5vh;
+  right: 5vw;
+  font-size: clamp(2rem, 1.5596rem + 2.2018vw, 5rem);
+}
+
+.side-menu p {
+  min-width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  gap: 5ch;
+}
+
+.side-menu p a {
+  height: auto;
+  width: auto;
+  padding: 4px;
+  transition: all 0.25s ease;
+  font-size: clamp(1.1rem, 0.8143rem + 1.4286vw, 1.5rem);
+}
+
+.side-menu p a:hover {
+  transform: scale(1.1);
+}
+/*-- sidemenu --*/
+/*-- Navbar --*/
+
+/*-- contact --*/
+.contact {
+  border: 2px solid var(--main);
+  width: 100%;
+  height: auto;
+  min-height: 50vh;
+  background-color: var(--main);
+  padding: 1vh 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.contact > div {
+  width: 50%;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.contact-head :where(h1, p) {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.contact-head h1 {
+  font-size: clamp(2rem, 1.8532rem + 0.7339vw, 3rem);
+}
+
+.contact-head p {
+  font-size: clamp(1rem, 0.9633rem + 0.1835vw, 1.25rem);
+}
+
+.contact-link a {
+  background-color: var(--black);
+  padding: 12px 16px;
+  font-size: clamp(1.25rem, 1.2133rem + 0.1835vw, 1.5rem);
+  transition: all 0.25s ease;
+}
+
+.contact-link a:hover {
+  background-color: #353336;
+}
+
+/*-- contact --*/
+
+/*-- Footer --*/
+.footer {
+  width: 100%;
+  min-height: 50vh;
+  height: auto;
+  padding: 0 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: var(--black);
+}
+
+.footer > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 20vh;
+  padding: 8px;
+}
+
+.footer-links p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2ch;
+}
+
+.footer-links p a,
+.footer-links p a span,
+.footer-links p a .fa-brands {
+  transition: all 0.25s ease;
+}
+
+.footer-links p a {
+  font-size: clamp(0.95rem, 0.9353rem + 0.0734vw, 1.05rem);
+}
+
+.footer-links p a .fa-brands {
+  font-size: clamp(0.95rem, 0.9353rem + 0.0734vw, 1.05rem);
+}
+
+.footer-links p a span {
+  font-size: clamp(1.5rem, 1.2798rem + 1.1009vw, 3rem);
+}
+
+.footer-links p a:hover,
+.footer-links p a span:hover,
+.footer-links p a .fa-brands:hover {
+  color: var(--main);
+}
+
+.footer-links p a:hover {
+  text-decoration: underline;
+}
+
+.footer-extra {
+  border-top: 1px solid var(--second);
+}
+
+.footer-extra a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2ch;
+}
+
+.footer-extra a .material-symbols-outlined {
+  transition: all 0.25s ease;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.footer a:hover .material-symbols-outlined {
+  color: var(--main);
+}
+
+.footer-extra p {
+  font-size: clamp(0.95rem, 0.9353rem + 0.0734vw, 1.05rem);
+}
+/*-- Footer --*/
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    max-width: 50%;
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    max-width: 50%;
+  }
+
+  .footer .footer-links {
+    flex-direction: column;
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .contact > div {
+    width: 100%;
+    min-height: 20vh;
+  }
+
+  .contact-head :where(h1, p) {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

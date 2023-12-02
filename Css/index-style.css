@@ -1,0 +1,186 @@
+/*-- Header --*/
+.header {
+  width: 100%;
+  height: 100vh;
+  padding: 11vh 5vw 1vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+      135deg,
+      rgba(21, 17, 23, 0.7) 40%,
+      rgba(21, 17, 23, 0.15) 100%
+    ),
+    url(images/Header.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hero {
+  width: 45%;
+  height: auto;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.hero p {
+  font-size: clamp(1rem, 0.9633rem + 0.1835vw, 1.25rem);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 1.7064rem + 1.4679vw, 4rem);
+}
+/*-- Header --*/
+
+/*-- Clients --*/
+.client {
+  width: 100%;
+  min-height: 70vh;
+  background-color: var(--main);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 2fr);
+  grid-template-areas:
+    "head head head"
+    "image image image"
+    "image image image";
+  grid-gap: 12px;
+  padding: 5vh 5vw;
+}
+
+.client-heading {
+  grid-area: head;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2rem, 1.5596rem + 2.2018vw, 5rem);
+  text-align: center;
+  font-weight: 600;
+}
+
+.client-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.image-1 {
+  background-image: url(images/HBO.svg);
+}
+.image-2 {
+  background-image: url(images/Natgeo.svg);
+}
+.image-3 {
+  background-image: url(images/jj.svg);
+}
+.image-4 {
+  background-image: url(images/MD.svg);
+}
+.image-5 {
+  background-image: url(images/Hiltion.svg);
+}
+.image-6 {
+  background-image: url(images/Pepsico.svg);
+}
+/*-- Clients --*/
+
+/*-- Work --*/
+.work {
+  width: 100%;
+  height: auto;
+  min-height: 90vh;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+  padding: 5vh 5vw;
+}
+
+.work > div {
+  width: 100%;
+  height: auto;
+  min-height: 10vh;
+  padding: 2ch;
+}
+
+.work-heading {
+  display: flex;
+  align-items: center;
+  background-color: var(--black);
+}
+
+.work .work-item {
+  background-image: url(images/Work.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+}
+
+.work-item :where(h1, h2, p) {
+  width: 50%;
+  padding: 4px 8px;
+}
+
+.work-item .work-stats {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.work-item h1 {
+  font-size: clamp(2rem, 1.8532rem + 0.7339vw, 3rem);
+}
+
+.work-item h2 {
+  font-size: clamp(2.5rem, 2.2798rem + 1.1009vw, 4rem);
+}
+
+.work-item p {
+  font-size: clamp(1.1rem, 1.0413rem + 0.2936vw, 1.5rem);
+}
+/*-- Work --*/
+
+@media screen and (max-width: 1024px) {
+  .work-item :where(h1, h2, p) {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    justify-content: center;
+  }
+
+  .hero {
+    width: 90%;
+  }
+
+  .client {
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 2fr);
+    grid-template-areas:
+      "head head"
+      "image image"
+      "image image"
+      "image image";
+    grid-gap: 8px;
+    padding: 5vh 5vw;
+  }
+
+  .work-item :where(h1, h2, p) {
+    width: 100%;
+  }
+
+  .work-item .work-stats {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+}
